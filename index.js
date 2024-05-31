@@ -19,7 +19,7 @@ client.on('messageCreate', (message) => {
 
     const content = message.content.toLowerCase();
 
-    if (PREFIXES.some(prefix => content.startsWith(prefix))) {
+    if (PREFIXES.some(prefix => content.includes(prefix))) {
         sendCatPicture(message.channel);
     }
 });
