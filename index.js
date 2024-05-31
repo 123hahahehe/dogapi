@@ -19,7 +19,7 @@ client.on('messageCreate', (message) => {
 
     const content = message.content.toLowerCase();
 
-    if (content.includes('woof')) {
+    if (content.includes('woof', 'bark' 'hawoo', 'ruff', 'wuff')) {
         sendCatPicture(message.channel);
     }
 });
