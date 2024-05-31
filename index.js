@@ -7,7 +7,7 @@ const client = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
 });
 
-const PREFIX = '!';
+const PREFIXES = ['woof', 'bark', 'hawoo', 'ruff', 'wuff'];
 
 client.once('ready', () => {
     console.log('Bot is online!');
@@ -19,7 +19,7 @@ client.on('messageCreate', (message) => {
 
     const content = message.content.toLowerCase();
 
-    if (content.includes('woof', 'bark' 'hawoo', 'ruff', 'wuff')) {
+    if (PREFIXES.some(prefix => content.startsWith(prefix))) {
         sendCatPicture(message.channel);
     }
 });
